@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 body{
@@ -20,6 +21,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pictures-container{
@@ -46,11 +48,11 @@ img{
 
 .dots-link-container{
   height: 20vh;
-  width: 100vw;
+  width: 100vh;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 300px;
 }
 
 i{
