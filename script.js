@@ -56,7 +56,11 @@ function dotClick(){
   dots.click(function () {
     var me = $(this);
     var dotIndex = me.index();
-    
+    var activeImg = $("img.active");
+    activeImg.removeClass("active");
+    var imgs = $("img");
+    imgs.eq(dotIndex).addClass("active");
+    dotsUpdate();
   });
 }
 
