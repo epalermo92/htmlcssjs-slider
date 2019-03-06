@@ -11,8 +11,8 @@ function rightClick(){
 
     activeImg.removeClass("active");
     nextImg.addClass("active");
+    dotsUpdate();
   });
-
 }
 
 function leftClick(){
@@ -28,12 +28,42 @@ function leftClick(){
 
     activeImg.removeClass("active");
     prevImg.addClass("active");
+    dotsUpdate();
+  });
+}
+
+function dotsUpdate(){
+  var imgs = $("img");
+  var activeIndex;
+
+  for (var i = 0; i < imgs.length; i++) {
+    if (imgs.eq(i).hasClass("active")) {
+      activeIndex = i;
+    }
+  }
+
+  var oldDot = $(".dots-link-container > i.fas");
+
+  oldDot.removeClass("fas").addClass("far");
+  var dots = $(".dots-link-container > i");
+  dots.eq(activeIndex).removeClass("far").addClass("fas");
+}
+
+function dotClick(){
+  var dots = $(".dots-link-container > i");
+  var imgs = $("img");
+
+  dots.click(function () {
+    var me = $(this);
+    var dotIndex = me.index();
+    
   });
 }
 
 function init(){
   rightClick();
   leftClick();
+  dotClick();
 }
 
 $(document).ready(init);
